@@ -7,32 +7,25 @@ import os
 import pickle
 
 # -----------------------------------
-# PAGE CONFIG
-# -----------------------------------
-st.set_page_config(page_title="Wind Power Forecast", page_icon="🌬️", layout="wide")
-
-# -----------------------------------
-# MODEL LOADING (OPTIMIZED + CACHED)
+# MODEL LOADING (CORRECT ORDER)
 # -----------------------------------
 @st.cache_resource
 def load_model():
     MODEL_PATH = "wind_model.pkl"
 
-    # Download ONLY if not exists
+    # Download if not exists
     if not os.path.exists(MODEL_PATH):
         file_id = "1GgeP15Bp0ncts-7LpMAWyhX8_TiPdjr6"
         url = f"https://drive.google.com/uc?export=download&id={file_id}"
         gdown.download(url, MODEL_PATH, quiet=False)
 
-    # Load model
+    # Load model AFTER download
     with open(MODEL_PATH, "rb") as f:
         model = pickle.load(f)
 
     return model
 
-# Load model once
-with st.spinner("⏳ Loading model, please wait..."):
-    model = load_model()
+model = load_model()
 
 st.success("✅ Model loaded successfully!")
 
