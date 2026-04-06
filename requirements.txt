@@ -1,19 +1,6 @@
-<<<<<<< HEAD
-streamlit
-pandas
-scikit-learn
-joblib
+streamlit==1.32.0
 numpy
-matplotlib
 plotly
-=======
-streamlit
-pandas
-scikit-learn
 joblib
-numpy
-matplotlib
-plotly
->>>>>>> 37c9ef8c52a7092a806970ca7331faa4bb15f189
-pillow
 gdown
+scikit-learn
