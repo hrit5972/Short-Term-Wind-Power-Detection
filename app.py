@@ -14,7 +14,10 @@ if not os.path.exists("wind_model.pkl"):
 
 
 # 1. Load the trained model
-model = joblib.load('wind_model.pkl')
+import pickle
+
+with open("wind_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # 2. Set up the Page Config
 st.set_page_config(page_title="Wind Power Forecast", page_icon="🌬️", layout="wide")
