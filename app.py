@@ -3,6 +3,15 @@ import joblib
 import numpy as np
 import plotly.graph_objects as go
 import time
+from urllib.request import urlretrieve
+import os
+
+if not os.path.exists("wind_model.pkl"):
+    url = "https://drive.google.com/uc?id=1GgeP15Bp0ncts-7LpMAWyhX8_TiPdjr6&export=download"
+    urlretrieve(url, "wind_model.pkl")
+
+
+
 
 # 1. Load the trained model
 model = joblib.load('wind_model.pkl')

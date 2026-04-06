@@ -16,3 +16,4 @@ matplotlib
 plotly
 >>>>>>> 37c9ef8c52a7092a806970ca7331faa4bb15f189
 pillow
+gdown
